@@ -8,14 +8,16 @@ import { PrivateComponent } from './components/private/private.component';
 import { LoginComponent } from './components/login/login.component';
 import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
-import {JWT_OPTIONS, JwtHelperService} from '@auth0/angular-jwt'
+import {JWT_OPTIONS, JwtHelperService} from '@auth0/angular-jwt';
+import { PanelComponent } from './components/panel/panel.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     PrivateComponent,
-    LoginComponent
+    LoginComponent,
+    PanelComponent
   ],
   imports: [
     BrowserModule,
