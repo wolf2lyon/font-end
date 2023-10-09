@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { LoginUsuario } from '../models/login-usuario';
 import { JwtHelperService } from '@auth0/angular-jwt';
@@ -26,5 +26,12 @@ export class AuthService {
     }
 
     return true;
+  }
+
+  public showUser(){
+    let headers = new HttpHeaders()
+    .set("Authorization",`Bearer ${localStorage.getItem('jwttoken')}`)
+    console.log(headers)
+    return this.http.get("http://localhost:8080/api/areasdetrabajo/panel",{headers})
   }
 }

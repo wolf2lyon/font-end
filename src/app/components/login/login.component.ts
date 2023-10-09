@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component ,OnInit} from '@angular/core';
 import { Route, Router } from '@angular/router';
 import { LoginUsuario } from 'src/app/models/login-usuario';
 import { AuthService } from 'src/app/services/auth.service';
@@ -8,10 +8,11 @@ import { AuthService } from 'src/app/services/auth.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
   nombreUsuario!: string;
   password!: string;
   loginUsuario!: LoginUsuario;
+  data!:any[]
 
   constructor(
     private authService:AuthService,
@@ -29,5 +30,11 @@ export class LoginComponent {
       localStorage.setItem('jwttoken',resp.jwttoken)
       this.router.navigate(['private']);
     })
+  }
+
+  ngOnInit(): void {   
+    this.authService.showUser().subscribe((result:any) => {
+      this.data = result;
+    });
   }
 }

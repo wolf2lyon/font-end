@@ -104,55 +104,12 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <th scope="row">Dianne Russell</th>
-                <td>vuhaithuongnute@gmail.com</td>
-                <td>Finanzas y Contabilidad</td>
-                
-              </tr>
-
-              <tr>
-                <th scope="row">Antwan Denny</th>
-                <td>ckctm12@gmail.com</td>
-                <td>Recursos Humanos</td>
-                
-              </tr>
-
-              <tr>
-                <th scope="row">Harry Peter</th>
-                <td>danghoang87hl@gmail.com</td>
-                <td>Marketing y Ventas</td>
-                
-              </tr>
-
-              <tr>
-                <th scope="row">Luisa Rodriguez</th>
-                <td>luisa.rodriguez@example.com</td>
-                <td>Desarrollo Web</td>
-               
-              </tr>
-
-              <tr>
-                <th scope="row">Ana García</th>
-                <td>ana.garcia@example.com</td>
-                <td>Diseño Gráfico</td>
-            
-              </tr>
-
-              <tr>
-                <th scope="row">Carlos López</th>
-                <td>carlos.lopez@example.com</td>
-                <td>Recursos Humanos</td>
-                
-              </tr>
-
-              <tr>
-                <th scope="row">Eduardo Pérez</th>
-                <td>eduardo.perez@example.com</td>
-                <td>Soporte Técnico</td>
-               
-              </tr>
-              
+                  <tr *ngFor="let datos of data">
+                    <th scope="row">{{datos.nombre}}</th>
+                    <td>{{datos.correo}}</td>
+                    <td>{{datos.area}}</td>
+                  
+                  </tr>          
             </tbody>
         </table>
     </section>
